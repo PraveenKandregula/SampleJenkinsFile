@@ -1,8 +1,8 @@
 node('master') {
         stage('Extracting variable') {
-            print "Environment: ${env.JOB_URL}"
+            print "Current job url: ${env.JOB_URL}"
 	    JobToBeBuilt = env.JOB_URL.replace("Pipeline-","")
-            print "Value extracted: ${JobToBeBuilt}"
+            print "Job being built after RM approval: ${JobToBeBuilt}"
         }
         stage('Trigger build') {
 			build job: '/CLI-Approval/RMApproval', parameters: 
