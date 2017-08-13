@@ -1,6 +1,6 @@
 node('master') {
         stage('Extracting variable') {
-            JobToBeBuilt = env.JOB_NAME.replace("Pipeline-","")[1]
+            JobToBeBuilt = env.JOB_NAME.replace("Pipeline-","")
             print "Value extracted: ${JobToBeBuilt}"
         }
         stage('Trigger build') {
