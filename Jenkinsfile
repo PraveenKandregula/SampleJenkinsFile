@@ -4,7 +4,7 @@ node('master') {
             print "Value extracted: ${JobToBeBuilt}"
         }
         stage('Trigger build') {
-			build job: 'RMApproval', parameters: 
+			build job: '/CLI-Approval/RMApproval', parameters: 
 			[
 			    string(name: 'Project', value: "${JobToBeBuilt}")
 			]
