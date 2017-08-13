@@ -1,6 +1,6 @@
 node('master') {
         stage('Extracting variable') {
-            print "Environment: ${env}
+            print "Environment: ${env}"
 	    JobToBeBuilt = env.JOB_NAME.replace("Pipeline-","")
             print "Value extracted: ${JobToBeBuilt}"
         }
