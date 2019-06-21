@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    parameters {
+        booleanParam(defaultValue: false, description: '', name: 'userFlag')
+        choice(choices: ['Yes', 'No'], description: '', name: 'choiceOption')
+        string(defaultValue: '', description: '', name: 'Value', trim: false)
+    }
+    stages{
+        stage('debug') {
+            steps {
+              println "${userFlag}-${choiceOption}-${Value}"
+            }
+        }
+    }
+}
